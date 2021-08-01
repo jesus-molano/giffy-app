@@ -1,14 +1,14 @@
 import { useState } from 'react';
-import AddCategory from './AddCategory';
+import InputCategory from './InputCategory';
 import GifGrid from './GifGrid';
 
-const Giffy = () => {
-	const [categories, setCategories] = useState([]);
+const Giffy = ({defaultCategories = []}) => {
+	const [categories, setCategories] = useState(defaultCategories);
 
 	return (
 		<>
 			<h1>Giffy</h1>
-			<AddCategory setCategories={setCategories} />
+			<InputCategory setCategories={setCategories} />
 			<hr />
 			<div className="container">
 				{categories.map((category) => (
